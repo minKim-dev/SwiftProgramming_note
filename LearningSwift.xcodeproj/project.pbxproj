@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B83766EA2AD9AC2500DB5329 /* ArrayAndDictionaryCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83766E92AD9AC2500DB5329 /* ArrayAndDictionaryCollection.swift */; };
+		B866EAC42AD6C69C00DD3426 /* PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866EAC32AD6C69C00DD3426 /* PropertyWrapper.swift */; };
 		B87B0BC02AD66EA700DF2CC2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B0BBF2AD66EA700DF2CC2 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,8 +25,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B83766E92AD9AC2500DB5329 /* ArrayAndDictionaryCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayAndDictionaryCollection.swift; sourceTree = "<group>"; };
+		B866EAC32AD6C69C00DD3426 /* PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapper.swift; sourceTree = "<group>"; };
 		B87B0BBC2AD66EA700DF2CC2 /* LearningSwift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LearningSwift; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87B0BBF2AD66EA700DF2CC2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B87B0BC62AD67B7800DF2CC2 /* Subclassing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subclassing.swift; sourceTree = "<group>"; };
+		B87B0BC82AD67B8400DF2CC2 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +63,11 @@
 		B87B0BBE2AD66EA700DF2CC2 /* LearningSwift */ = {
 			isa = PBXGroup;
 			children = (
+				B83766E92AD9AC2500DB5329 /* ArrayAndDictionaryCollection.swift */,
 				B87B0BBF2AD66EA700DF2CC2 /* main.swift */,
+				B87B0BC62AD67B7800DF2CC2 /* Subclassing.swift */,
+				B87B0BC82AD67B8400DF2CC2 /* Extension.swift */,
+				B866EAC32AD6C69C00DD3426 /* PropertyWrapper.swift */,
 			);
 			path = LearningSwift;
 			sourceTree = "<group>";
@@ -120,6 +130,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B866EAC42AD6C69C00DD3426 /* PropertyWrapper.swift in Sources */,
+				B83766EA2AD9AC2500DB5329 /* ArrayAndDictionaryCollection.swift in Sources */,
 				B87B0BC02AD66EA700DF2CC2 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
