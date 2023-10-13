@@ -16,9 +16,10 @@ struct Address {
     }
 }
 
-var address = Address()
 
-address.city = "London"
-print(address.city)
+//var address = Address()
+//
+//address.city = "London"
+//print(address.city)
 
 
