@@ -11,6 +11,7 @@
 		B866EAC42AD6C69C00DD3426 /* PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866EAC32AD6C69C00DD3426 /* PropertyWrapper.swift */; };
 		B87B0BC02AD66EA700DF2CC2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B0BBF2AD66EA700DF2CC2 /* main.swift */; };
 		B89C96FE2ADA6B1A003719CC /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89C96FD2ADA6B1A003719CC /* ErrorHandling.swift */; };
+		B8B9CF3F2AE03070000A93B8 /* GeneratingCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9CF3E2AE03070000A93B8 /* GeneratingCustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,7 @@
 		B87B0BC62AD67B7800DF2CC2 /* Subclassing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subclassing.swift; sourceTree = "<group>"; };
 		B87B0BC82AD67B8400DF2CC2 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		B89C96FD2ADA6B1A003719CC /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		B8B9CF3E2AE03070000A93B8 /* GeneratingCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratingCustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				B89C96FD2ADA6B1A003719CC /* ErrorHandling.swift */,
+				B8B9CF3E2AE03070000A93B8 /* GeneratingCustomView.swift */,
 				B83766E92AD9AC2500DB5329 /* ArrayAndDictionaryCollection.swift */,
 				B87B0BBF2AD66EA700DF2CC2 /* main.swift */,
 				B87B0BC62AD67B7800DF2CC2 /* Subclassing.swift */,
@@ -135,6 +138,7 @@
 			files = (
 				B866EAC42AD6C69C00DD3426 /* PropertyWrapper.swift in Sources */,
 				B89C96FE2ADA6B1A003719CC /* ErrorHandling.swift in Sources */,
+				B8B9CF3F2AE03070000A93B8 /* GeneratingCustomView.swift in Sources */,
 				B83766EA2AD9AC2500DB5329 /* ArrayAndDictionaryCollection.swift in Sources */,
 				B87B0BC02AD66EA700DF2CC2 /* main.swift in Sources */,
 			);
