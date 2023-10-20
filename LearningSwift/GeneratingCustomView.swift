@@ -118,3 +118,28 @@ struct ViewAsProperty: View {
 // 아래와 같은 경우는 앞서 선언했던 MyHStackView 커스텀 뷰의 Text 뷰들의 폰트를 largeTitle 폰트 스타일로 변경한다.
 // MyStackView()
 //      .font(.largeTitle)
+
+/*:
+ 수정자들을 연결할 때 수정자의 순서가 중요하다는 것을 알아야한다.
+ */
+
+// 첫 번째의 경우, 텍스트 뷰에 먼저 경계선을 그리고 padding에 의해 여백을 추가하게 되고
+// 두 번째의 경우, 텍스트 뷰에 먼저 여백을 추가하고 경계선을 그리게 된다.
+//Text("Sample Text")
+//    .border(Color.black)
+//    .padding()
+//
+//Text("Sample Text")
+//    .padding()
+//    .border(Color.black)
+
+/*:
+ 우리는 커스텀 수정자라는 것을 이용해서 뷰에 자주 적용되는 대표적인 수정자들을 만들 수 있게 된다.
+ */
+
+// 다음과 같이 4개의 수정자를 한 묶음으로 자주 사용한다고 하면,
+Text("Text 1")
+    .font(.largeTitle)
+    .background(Color.white)
+// 이 4개의 수정자를 계속 적용하는 것보다 이걸 묶어서 필요할 때마다 참조한다면 좋을 것이다.
+
