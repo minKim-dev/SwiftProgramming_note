@@ -138,8 +138,24 @@ struct ViewAsProperty: View {
  */
 
 // 다음과 같이 4개의 수정자를 한 묶음으로 자주 사용한다고 하면,
-Text("Text 1")
-    .font(.largeTitle)
-    .background(Color.white)
-// 이 4개의 수정자를 계속 적용하는 것보다 이걸 묶어서 필요할 때마다 참조한다면 좋을 것이다.
+//Text("Text 1")
+//    .font(.largeTitle)
+//    .background(Color.white)
+//    .border(Color.gray, width: 0.2)
+//    .shadow(color: Color.black, radius: 5, x: 0, y: 5)
 
+// 이 4개의 수정자를 계속 적용하는 것보다 이걸 묶어서 필요할 때마다 참조한다면 좋을 것이다.
+// 따라서 이 상황에서 커스텀 수정자를 이용하게 된다.
+struct StandardTitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .background(Color.white)
+            .border(Color.gray, width: 0.2)
+            .shadow(color: Color.black, radius: 5, x: 0, y: 5)
+    }
+}
+
+// 적용하는 것은 다음과 같이 modifier() 메서드를 통해 커스텀 수정자를 전달해서 적용한다.
+//Text("Text 1")
+//    .modifier(StandardTitle())
