@@ -73,6 +73,45 @@ struct StatePropertyBinding2: View {
     }
 }
 
+/*:
+ ## b. State 바인딩
+ 만약에 아래와 같은 상황이면 어떻게 해야할까?
+ 즉, 어떤 뷰가 하나 이상의 하위 뷰를 가지고 있으면서 동일한 상태 프로퍼티에 대해 접근해야 하는 경우가 발생하는 경우말이다.
+ 아래는 WifiImageView가 하위 뷰로 분리되어 있는 상황인데 이 뷰는 여전히 wifiEnable 상태 프로퍼티에 접근해야한다.
+ 하지만 Image뷰는 분리된 하위 뷰의 요소이기 때문에 메인 뷰의 범위에서 벗어나게 된다. 이 말이 무엇이냐 하면...
+ WifiImageView의 입장에서 WifiImageView에 있는 wifiEnabled 프로퍼티는 저장되지 않은 것이다.
+ 메인 뷰에는 wifiEnabled가 있지만 하위 뷰로써 독립한(분리된)우리의 WifiImageView는 아무 것도 없는 상황이기 때문이다.(선언된 프로퍼티가 없음)
+ 따라서 Image 뷰에서 wifiEnabled라는 녀석을 쓰면 "잉...? 나 이런 녀석 모르는데?" 이런 식으로 되는 것이지...!
+ 그럼 이런 문제를 어떻게 해결하냐고? 다음과 같이 @Binding 프로퍼티 래퍼를 이용해서 프로퍼티를 선언한다면 이 문제는 쉽게 해결할 수 있다!!
+ */
+struct StateBinding: View {
+    
+    @State private var wifiEnabled = true
+    @State private var userName = ""
+    
+    var body: some View {
+        
+        VStack {
+            Toggle(isOn: $wifiEnabled) {
+                Text("Enable Wi-Fi")
+            }
+            TextField("Enter user name", text: $userName)
+            WifiImageView(wifiEnabled: $wifiEnabled)
+        }
+    }
+}
+    
+    struct WifiImageView: View {
+        
+        @Binding var wifiEnabled : Bool
+        
+        var body: some View {
+            Image(systemName: wifiEnabled ? "wifi" : "wifi.slash") // 에러가 발생한다.
+        }
+    }
+
+
+
 //struct SwiftStateProperty_Previews: PreviewProvider {
 //    static var previews: some View {
 //        SwiftStateProperty1()
