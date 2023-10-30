@@ -53,7 +53,13 @@ struct Observable_Object: View {
     
     var body: some View {
         Text("\(demoData.currentUser), you are user number \(demoData.userCount)")
+        
+        NavigationLink(destination: SecondView(DemoData)) {
+            Text("Next Screen")
+        }
     }
+    
+   
 }
 
 struct Observable_State_Environment_object_Previews: PreviewProvider {
@@ -79,3 +85,56 @@ struct Observable_State_Environment_object_Previews: PreviewProvider {
  환경자체가 바뀌어 버리는 것, 즉 아예 다른 뷰로 이동해버리는 것이기 때문이다. 그래서 프로퍼티 래퍼의 이름이 Environment인 것 같다...
  어쨌든! 이런 경우에는 이동할 때 다른 뷰로 구독되는 객체에 대한 참조를 전달해 줘야한다.
  */
+
+
+class SpeedSetting: ObservableObject {
+    // Environment 객체는 Observable 객체와 같은 방식으로 선언되기 때문에 반드시 ObservableObject 프로토콜을 따라야 한다.
+    // 중요한 점은 이 객체는 SwiftUI 환경에 저장되며, 뷰에서 뷰로 전달할 필요 없이 모든 자식 뷰가 접근할 수 있다는 것!
+    @Published var speed = 0.0
+}
+
+struct SecondView: View {
+    // Environment 객체를 구독해야 하는 뷰는 @EnvironmentObject 프로퍼티 래퍼를 사용하여 객체를 참조하면 된다.
+    @EnvironmentObject var speedsetting: SpeedSetting
+    
+    var body: some View {
+        Slider(value: $speedsetting.speed, in: 0...100)
+    }
+}
+
+struct ThirdView: View {
+    @EnvironmentObject var speedsetting: SpeedSetting
+    
+    var body: some View {
+        Text("Speed = \(speedsetting.speed)")
+    }
+}
+
+// 이렇게 입력하고 실행하면 실행 직후 충돌이 발생함.
+// Thread 1: Fatal error: No ObservableObject of type SpeedSetting found. A View.
+// environmentObject(_:) for SpeedSetting may be missing as an ancestor of this view.
+// 에러가 발생한 원인은 ContentView_error 내에서 관찰 가능한 객체의 인스턴스(speedsetting)를 생성했지만 뷰 계층 구조에 아직 삽입하지 않았기 때문이다.
+// 이것을 해결하기 위해서는 Observable 객체 인스턴스를 통해 전달하는 enviornmentObject() 수정자를 사용한다.
+struct ContentView_error: View {
+    let speedsetting = SpeedSetting()
+    
+    var body: some View {
+        VStack {
+            SecondView()
+            ThirdView()
+        }
+    }
+}
+
+struct ContentView_correct: View {
+    let speedsetting = SpeedSetting()
+    
+    var body: some View {
+        VStack {
+            SecondView()
+            ThirdView()
+        }
+        // environmentObject() 수정자를 사용해서 뷰 계층 구조에 삽입하기 전에 Environment 객체도 초기화 해야함.
+        .environmentObject(speedsetting)
+    }
+}
