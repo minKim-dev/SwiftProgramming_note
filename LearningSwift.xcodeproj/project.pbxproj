@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B82B67FD2AF911EE00B3C6C5 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B67FC2AF911EE00B3C6C5 /* Actor.swift */; };
 		B833AB3F2AE2CF6200ECF6A0 /* StackAndFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B833AB3E2AE2CF6200ECF6A0 /* StackAndFrame.swift */; };
 		B83766EA2AD9AC2500DB5329 /* ArrayAndDictionaryCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83766E92AD9AC2500DB5329 /* ArrayAndDictionaryCollection.swift */; };
 		B85DB0372AEBCE6B0080AA18 /* Observable:State:Environment object.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85DB0362AEBCE6B0080AA18 /* Observable:State:Environment object.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B82B67FC2AF911EE00B3C6C5 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		B833AB3E2AE2CF6200ECF6A0 /* StackAndFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackAndFrame.swift; sourceTree = "<group>"; };
 		B83766E92AD9AC2500DB5329 /* ArrayAndDictionaryCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayAndDictionaryCollection.swift; sourceTree = "<group>"; };
 		B85DB0362AEBCE6B0080AA18 /* Observable:State:Environment object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable:State:Environment object.swift"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				B833AB3E2AE2CF6200ECF6A0 /* StackAndFrame.swift */,
 				B8D78B1E2AE5324000631F0E /* SwiftStateProperty.swift */,
 				B85DB0362AEBCE6B0080AA18 /* Observable:State:Environment object.swift */,
+				B82B67FC2AF911EE00B3C6C5 /* Actor.swift */,
 				B83766E92AD9AC2500DB5329 /* ArrayAndDictionaryCollection.swift */,
 				B87B0BBF2AD66EA700DF2CC2 /* main.swift */,
 				B87B0BC62AD67B7800DF2CC2 /* Subclassing.swift */,
@@ -151,6 +154,7 @@
 				B866EAC42AD6C69C00DD3426 /* PropertyWrapper.swift in Sources */,
 				B89C96FE2ADA6B1A003719CC /* ErrorHandling.swift in Sources */,
 				B8B9CF3F2AE03070000A93B8 /* GeneratingCustomView.swift in Sources */,
+				B82B67FD2AF911EE00B3C6C5 /* Actor.swift in Sources */,
 				B83766EA2AD9AC2500DB5329 /* ArrayAndDictionaryCollection.swift in Sources */,
 				B87B0BC02AD66EA700DF2CC2 /* main.swift in Sources */,
 			);
