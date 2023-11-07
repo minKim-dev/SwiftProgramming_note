@@ -6,6 +6,7 @@
 //
 // 앱의 생명주기와 관련된 여러 수정자를 살펴본다.
 
+
 import SwiftUI
 
 struct ContentView: View {
