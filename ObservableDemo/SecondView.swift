@@ -8,16 +8,25 @@
 import SwiftUI
 
 struct SecondView: View {
+    
+    @StateObject var timerData: TimerData
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Second View")
+                .font(.largeTitle)
+            Text("Timer Count = \(timerData.timeCount)")
+                .font(.headline)
+        }
+        .padding()
     }
 }
 
 struct SecondView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondView()
+        SecondView(timerData: TimerData())
     }
 }
 
-//test
+
 
