@@ -28,12 +28,14 @@ struct ContentView: View {
                 
                 // 내비게이션을 추가했다.
                 // 이건 두 개의 뷰가 동일한 Observable 객체 인스턴스를 구독하고 있음을 알 수 있다.
-                NavigationLink(destination: SecondView(timerData: timerData)) {
+                NavigationLink(destination: SecondView()) {
                     Text("Next Screen")
                 }
                 .padding()
             }
         }
+        // environmentObject() 수정자를 추가해 timerData 인스턴스를 뷰 계층 환경에 삽입한다.
+        .environmentObject(timerData)
     }
     
     func resetCount() {
