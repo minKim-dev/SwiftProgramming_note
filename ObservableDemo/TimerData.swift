@@ -10,7 +10,7 @@ import Combine
 
 class TimerData : ObservableObject { // ObservableObject 프로토콜을 구현하는 함수로 선언
     
-    @Published var timeCount = 0
+    @Published var timeCount = 0 
     var timer : Timer?
     
     init() {
