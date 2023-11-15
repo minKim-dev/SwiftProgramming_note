@@ -19,4 +19,16 @@ SwiftUI 데이터 지속성을 위해서 @SceneStorage, @AppStorage 프로퍼티
 
 ### 4. StorageDemo 프로젝트를 통한 두 프로퍼티 래퍼의 사용 예시 확인
 - 프로젝트 링크
-vvv
+
+# 3. @AppStorage property wrapper
+## - @AppStorage 프로퍼티 래퍼란?
+@AppStorage 프로퍼티 래퍼는 @SceneStorage 프로퍼티 래퍼랑 다르게 앱 전체에서 접근할 수 있는 데이터를 저장하는데 사용되는 프로퍼티 래퍼다.
+@SceneStorage에서는 한 화면의 어떤 인스턴스에 저장된 데이터는 앱내의 다른 화면이나 다른 인스턴스에서 접근할 수 없다. 그러나 @AppStorage 프로퍼티 래퍼를 이용하면
+앱 전체를 통해서 접근할 수 있는 데이터를 저장할 수 있다.
+
+아래와 같이 @AppStorage 프로퍼티 래퍼를 이용하는데, 키로 사용할 문자열 값을 필요로 한다.
+이렇게 해서 만들어진 데이터는 UserDefaults 저장소에 저장되는데 만약, 다른 곳에 저장하고 싶다면 app group을 지정해서 커스텀으로 데이터를 저장할 수 있다.
+app group는 그룹 내의 다른 앱 또는 타깃과 데이터를 공유할 수 있게 한다.
+```swift
+@AppStorage("KEY") var mytext: String = "VALUE"
+```
